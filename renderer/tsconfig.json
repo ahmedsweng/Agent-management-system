@@ -1,0 +1,21 @@
+{
+  "extends": "../tsconfig.json",
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/dashboard/projets/page.tsx",
+    "../app/types/**/*.ts",
+    "../dist/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"],
+  "paths": { "@/*": ["./renderer/*"] },
+  "compilerOptions": {
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
+  }
+}

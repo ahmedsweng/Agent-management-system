@@ -1,0 +1,16 @@
+appId: com.example.nextron
+productName: My Nextron App
+copyright: Copyright © 2018 Yoshihide Shiono
+directories:
+  output: app
+  buildResources: resources
+files:
+  - from: .
+    filter:
+      - package.json
+      - app
+publish: null
+extraResources:
+  - node_modules/.prisma/**/*
+  - node_modules/@prisma/client/runtime/**/*
+  - prisma/dev.db

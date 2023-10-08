@@ -1,0 +1,71 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id    Int     @id @default(autoincrement())
+  email String  @unique
+  name  String?
+}
+
+model Bien {
+  id                   Int      @id @default(autoincrement())
+  lot_id               Int
+  Bloc                 String
+  Itage                String
+  superficie_habitable Float
+  superficie_total     Float
+  type                 String
+  prix_m2              Float
+  prix_total           Float
+  etat                 String
+  projet               Projet @relation(fields: [projet_id], references: [id])
+  projet_id            Int
+  client               Client? @relation(fields: [client_id], references: [id])
+  client_id            Int?
+  reserve              Reservation? @relation(fields: [reserve_id], references: [id])
+  reserve_id           Int? @unique
+}
+
+model Projet {
+  id      Int    @id @default(autoincrement())
+  type    String
+  address String
+  bien    Bien[]
+}
+
+model Client {
+  id                Int     @id @default(autoincrement())
+  date_de_naissance String
+  lieu_de_naissance String
+  adresse           String
+  telephone         String
+  id_piece          String
+  bien              Bien[]
+  reserve           Reservation[]
+}
+
+model Reservation {
+  id           Int    @id @default(autoincrement())
+  bien         Bien?
+  client       Client @relation(fields: [client_id], references: [id])
+  client_id    Int
+  montant_bien Float
+  versement    Versement[]
+  reste        Float
+}
+
+model Versement {
+  id             Int       @id @default(autoincrement())
+  reservation    Reservation @relation(fields: [reservation_id], references: [id])
+  reservation_id Int
+  date_payment   DateTime
+  mode_payment   String
+  type_compte    String
+
+}
