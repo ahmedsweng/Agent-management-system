@@ -5,7 +5,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/dashboard/projets/page.tsx",
+    "app/dashboard/projects/page.tsx",
     "../app/types/**/*.ts",
     "../dist/types/**/*.ts"
   ],

@@ -4,18 +4,18 @@ import { useEffect, useState } from "react";
 import Shet from "../../../components/Shet";
 import { Input } from "../../../components/ui/input";
 import { Button } from "../../../components/ui/button";
-import { DataTable } from "../../data-tables/projetTable";
-import { columns } from "../../columns/projetColumns";
+import { DataTable } from "../../data-tables/projectTable";
+import { columns } from "../../columns/projectColumns";
 
 function page() {
-  const [projet, setProjet] = useState([]);
+  const [project, setproject] = useState([]);
 
   const fetchData = () => {
-    const proj = window.electronAPI.getProj().then((res) => setProjet(res));
+    const proj = window.electronAPI.getProj().then((res) => setproject(res));
     console.log(proj);
   };
 
-  const newprojet = () => {};
+  const newproject = () => {};
   return (
     <div>
       <h1>Users</h1>
@@ -23,8 +23,8 @@ function page() {
         <Button onClick={fetchData}>Fetch</Button>
         <Shet
           children={
-            <form onSubmit={newprojet} className="flex flex-col gap-5">
-              <Input placeholder="Projet id" />
+            <form onSubmit={newproject} className="flex flex-col gap-5">
+              <Input placeholder="project id" />
               <Input placeholder="Type" />
               <Input placeholder="Address" />
               <Button type="submit">Ajoute</Button>
@@ -32,7 +32,7 @@ function page() {
           }
         />
       </div>
-      <DataTable columns={columns} data={projet} />
+      <DataTable columns={columns} data={project} />
     </div>
   );
 }

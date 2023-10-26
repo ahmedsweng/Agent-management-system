@@ -17,16 +17,16 @@ CREATE TABLE "Bien" (
     "prix_m2" REAL NOT NULL,
     "prix_total" REAL NOT NULL,
     "etat" TEXT NOT NULL,
-    "projet_id" INTEGER NOT NULL,
+    "project_id" INTEGER NOT NULL,
     "client_id" INTEGER,
     "reserve_id" INTEGER,
-    CONSTRAINT "Bien_projet_id_fkey" FOREIGN KEY ("projet_id") REFERENCES "Projet" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT "Bien_project_id_fkey" FOREIGN KEY ("project_id") REFERENCES "project" ("id") ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT "Bien_client_id_fkey" FOREIGN KEY ("client_id") REFERENCES "Client" ("id") ON DELETE SET NULL ON UPDATE CASCADE,
     CONSTRAINT "Bien_reserve_id_fkey" FOREIGN KEY ("reserve_id") REFERENCES "Reservation" ("id") ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 -- CreateTable
-CREATE TABLE "Projet" (
+CREATE TABLE "project" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "type" TEXT NOT NULL,
     "address" TEXT NOT NULL

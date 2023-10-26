@@ -107,16 +107,16 @@ export const createWindow = (
   // Menu.setApplicationMenu(menu);
 
   const prisma = new PrismaClient();
-  ipcMain.handle("getProjet", async (event, args) => {
-    const ret = await prisma.projet.findMany();
+  ipcMain.handle("getproject", async (event, args) => {
+    const ret = await prisma.project.findMany();
     return ret;
   });
-  ipcMain.handle("getAllProjet", async (event, args) => {
-    const ret = await prisma.projet.count();
+  ipcMain.handle("getAllproject", async (event, args) => {
+    const ret = await prisma.project.count();
     return ret;
   });
-  ipcMain.handle("addProjet", async (event, args) => {
-    const ret = await prisma.projet.create({
+  ipcMain.handle("addproject", async (event, args) => {
+    const ret = await prisma.project.create({
       data: args.data,
     });
     return ret;

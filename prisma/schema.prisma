@@ -24,15 +24,15 @@ model Bien {
   prix_m2              Float
   prix_total           Float
   etat                 String
-  projet               Projet @relation(fields: [projet_id], references: [id])
-  projet_id            Int
+  project               project @relation(fields: [project_id], references: [id])
+  project_id            Int
   client               Client? @relation(fields: [client_id], references: [id])
   client_id            Int?
   reserve              Reservation? @relation(fields: [reserve_id], references: [id])
   reserve_id           Int? @unique
 }
 
-model Projet {
+model project {
   id      Int    @id @default(autoincrement())
   type    String
   address String

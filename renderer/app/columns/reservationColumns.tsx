@@ -13,7 +13,7 @@ export type Reservation = {
 export const columns: ColumnDef<Reservation>[] = [
   {
     accessorKey: "id",
-    header: "Projet_id",
+    header: "project_id",
   },
   {
     accessorKey: "type",

@@ -43,7 +43,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
             />
           </div>
           <Button onClick={() => router.replace("/dashboard")}>
-            Accèder le logiciel
+            Log in 
           </Button>
         </div>
       </form>

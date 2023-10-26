@@ -11,7 +11,7 @@ function TopBar() {
       <div className="relative flex flex-1 justify-between items-center pb-2">
         <div className="absolute right-0 bottom-0 h-0.5 w-full bg-gradient-to-r from-gray-100 via-gray-300 to-gray-100 dark:from-gray-900 dark:via-gray-500 dark:to-gray-900 " />
         <div>
-          <h1 className="text-2xl">Bonjour</h1>
+          <h1 className="text-2xl">GOOD MORNING </h1>
           <h1 className="text-gray-500">{date.toDateString()}</h1>
         </div>
         <p className="text-sm text-muted-foreground">

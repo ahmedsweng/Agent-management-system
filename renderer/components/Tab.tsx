@@ -8,14 +8,26 @@ import { BiBookOpen, BiGroup } from "react-icons/bi";
 import { GrContactInfo } from "react-icons/gr";
 import { HiOutlineHomeModern } from "react-icons/hi2";
 import { BsPerson } from "react-icons/bs";
+import { useState, createContext } from "react";
 
-const Tab = ({ rf, name }: { rf: string; name: string }) => {
+const Tab = ({
+  opens,
+  rf,
+  name,
+}: {
+  opens: boolean;
+  rf: string;
+  name: string;
+}) => {
   const pagePath = usePathname();
-  const size = 24;
+  const size = opens ? 25 : 30;
+
   return (
     <Link href={rf} className="flex hover:text-blue-600 text-gray-500">
       <div
-        className={`flex w-44 px-8 py-2 rounded-md hover:text-blue-600 hover:bg-blue-100 
+        className={`flex ${
+          opens ? "w-45  px-8 py-2" : "w-10 px-1  "
+        }  duration-500 rounded-md hover:text-blue-600 hover:bg-blue-100 
       ${pagePath.includes(rf) ? "text-blue-600 bg-blue-100" : "text-gray-500"}`}
       >
         {rf === "/dashboard/home" && (
@@ -24,10 +36,10 @@ const Tab = ({ rf, name }: { rf: string; name: string }) => {
             className={pagePath == "/dashboard/home" && " text-blue-500"}
           />
         )}
-        {rf === "/dashboard/projets" && (
+        {rf === "/dashboard/projects" && (
           <GoProjectRoadmap
             size={size}
-            className={pagePath == "/dashboard/projets" && " text-blue-500"}
+            className={pagePath == "/dashboard/projects" && " text-blue-500"}
           />
         )}
         {rf === "/dashboard/clients" && (
@@ -48,16 +60,15 @@ const Tab = ({ rf, name }: { rf: string; name: string }) => {
             className={pagePath == "/dashboard/reservation" && " text-blue-500"}
           />
         )}
-        {rf === "/dashboard/paramettre" && (
+        {rf === "/dashboard/Sittings" && (
           <RiSettingsLine
             size={size}
-            className={pagePath == "/dashboard/paramettre" && " text-blue-500"}
+            className={pagePath == "/dashboard/Sittings" && " text-blue-500"}
           />
         )}
-        <div className="pl-2">{name}</div>
+        <div className="pl-2">{opens && name }</div>
       </div>
     </Link>
   );
 };
-
 export default Tab;

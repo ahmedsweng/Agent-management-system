@@ -26,6 +26,7 @@
     "electron-squirrel-startup": "^1.0.0",
     "electron-store": "^8.1.0",
     "lucide-react": "^0.284.0",
+    "next-themes": "^0.2.1",
     "prisma": "^5.4.1",
     "react-icons": "^4.11.0",
     "tailwind-merge": "^1.14.0",

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Shet from "../../../components/Shet";
 import { Input } from "../../../components/ui/input";
 import { Button } from "../../../components/ui/button";
-import { DataTable } from "../../data-tables/projetTable";
+import { DataTable } from "../../data-tables/projectTable";
 import { columns } from "../../columns/clientColumns";
 
 function page() {
@@ -15,15 +15,15 @@ function page() {
     console.log(proj);
   };
 
-  const newprojet = () => {};
+  const newproject = () => {};
   return (
     <div>
       <div className="flex gap-5 my-4">
         <Button onClick={fetchData}>Fetch</Button>
         <Shet
           children={
-            <form onSubmit={newprojet} className="flex flex-col gap-5">
-              <Input placeholder="Projet id" />
+            <form onSubmit={newproject} className="flex flex-col gap-5">
+              <Input placeholder="project id" />
               <Input placeholder="Type" />
               <Input placeholder="Address" />
               <Button type="submit">Ajoute</Button>
